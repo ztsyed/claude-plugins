@@ -14,7 +14,7 @@
         "source": "github",
         "repo": "ztsyed/claude-plugins"
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "category": "development",
       "author": {
         "name": "Zia Syed",
