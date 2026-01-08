@@ -1,15 +1,25 @@
 {
-  "name": "ZTS Plugin Marketplace",
+  "name": "zts-plugin-marketplace",
   "description": "Public plugins for distributed systems development",
   "version": "1.0.0",
+  "owner": {
+    "name": "Zia Syed",
+    "url": "https://github.com/ztsyed"
+  },
   "plugins": [
     {
       "name": "ztsyed-plugins",
       "description": "Core agents and commands for distributed systems work",
-      "source": ".",
+      "source": {
+        "type": "local",
+        "path": "."
+      },
       "version": "0.1.0",
       "category": "development",
-      "author": "ztsyed"
+      "author": {
+        "name": "Zia Syed",
+        "url": "https://github.com/ztsyed"
+      }
     }
   ]
 }
