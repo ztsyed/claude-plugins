@@ -1,7 +1,7 @@
 {
   "name": "ztsyed-plugins",
   "description": "Shared Claude Code plugins - distributed systems, NATS, n8n workflows, and data center automation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Zia Syed",
     "url": "https://github.com/ztsyed"

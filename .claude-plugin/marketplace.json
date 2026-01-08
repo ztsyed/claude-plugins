@@ -1,7 +1,7 @@
 {
   "name": "zts-plugin-marketplace",
   "description": "Public plugins for distributed systems development",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "owner": {
     "name": "Zia Syed",
     "url": "https://github.com/ztsyed"
