@@ -1,0 +1,15 @@
+{
+  "name": "ZTS Plugin Marketplace",
+  "description": "Public plugins for distributed systems development",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "ztsyed-plugins",
+      "description": "Core agents and commands for distributed systems work",
+      "source": ".",
+      "version": "0.1.0",
+      "category": "development",
+      "author": "ztsyed"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+name: Validate Plugins
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Validate plugin.json
+        run: |
+          echo "Checking plugin.json..."
+          jq empty .claude-plugin/plugin.json
+          echo "✓ Valid JSON"
+          
+      - name: Validate marketplace.json
+        run: |
+          echo "Checking marketplace.json..."
+          jq empty .claude-plugin/marketplace.json
+          echo "✓ Valid JSON"
+          
+      - name: Validate agent frontmatter
+        run: |
+          echo "Checking agents..."
+          for f in agents/*.md; do
+            echo "  Checking $f"
+            head -1 "$f" | grep -q "^---$" || (echo "  ✗ Missing frontmatter" && exit 1)
+            grep -q "^name:" "$f" || (echo "  ✗ Missing name" && exit 1)
+            grep -q "^description:" "$f" || (echo "  ✗ Missing description" && exit 1)
+            echo "  ✓ Valid"
+          done
+          
+      - name: Validate skill frontmatter
+        run: |
+          echo "Checking skills..."
+          for f in skills/*/SKILL.md; do
+            echo "  Checking $f"
+            head -1 "$f" | grep -q "^---$" || (echo "  ✗ Missing frontmatter" && exit 1)
+            grep -q "^name:" "$f" || (echo "  ✗ Missing name" && exit 1)
+            grep -q "^description:" "$f" || (echo "  ✗ Missing description" && exit 1)
+            echo "  ✓ Valid"
+          done
+          
+      - name: Summary
+        run: |
+          echo ""
+          echo "=== Plugin Summary ==="
+          echo "Agents: $(ls agents/*.md 2>/dev/null | wc -l)"
+          echo "Commands: $(ls commands/*.md 2>/dev/null | wc -l)"
+          echo "Skills: $(ls skills/*/SKILL.md 2>/dev/null | wc -l)"

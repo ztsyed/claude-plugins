@@ -1,0 +1,19 @@
+{
+  "name": "ztsyed-plugins",
+  "description": "Shared Claude Code plugins - distributed systems, NATS, n8n workflows, and data center automation",
+  "version": "0.1.0",
+  "author": {
+    "name": "Zia Syed",
+    "url": "https://github.com/ztsyed"
+  },
+  "repository": "https://github.com/ztsyed/claude-plugins",
+  "homepage": "https://github.com/ztsyed/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "distributed-systems",
+    "nats",
+    "n8n",
+    "data-center",
+    "alarm-management"
+  ]
+}
