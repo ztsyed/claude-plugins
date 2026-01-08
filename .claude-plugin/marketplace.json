@@ -11,7 +11,7 @@
       "name": "ztsyed-plugins",
       "description": "Core agents and commands for distributed systems work",
       "source": {
-        "type": "github",
+        "source": "github",
         "repo": "ztsyed/claude-plugins"
       },
       "version": "0.1.0",
